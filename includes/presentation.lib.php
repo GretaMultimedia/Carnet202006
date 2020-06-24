@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)){
+    session_start();
+}
 function entete($titre=null){
     echo '<!DOCTYPE html>
 <html lang="fr">
@@ -28,7 +31,13 @@ function entete($titre=null){
    if (!is_null($titre)){ 
         echo "<h2>$titre</h2>";
    }
-    
+   
+   if (!empty($_SESSION["message"])){
+       echo $_SESSION["message"];
+       unset($_SESSION["message"]);
+   }
+   
+  
 }
 function pied(){
     echo '</main>

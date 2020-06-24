@@ -115,3 +115,49 @@ footer{
     box-sizing: border-box;
     padding:.3em
 }
+
+.succes{
+    
+    display:block;
+    max-width:50%;
+    max-height:80vh;
+    color:white;
+    text-align:center;
+    margin:auto;
+    
+    /*
+    position:fixed;
+    left:50%;
+    top:50%;
+    z-index:100000;
+    transform: translateX(-50%) translateY(-50%);
+    */
+    background:lightgreen;
+    box-sizing: border-box;
+    
+    padding:2em;
+    
+}
+
+.erreur{
+    
+    display:block;
+    max-width:50%;
+    max-height:80vh;
+    color:white;
+    text-align:center;
+    margin:auto;
+    
+    /*
+    position:fixed;
+    left:50%;
+    top:50%;
+    z-index:100000;
+    transform: translateX(-50%) translateY(-50%);
+    */
+    background:pink;
+    box-sizing: border-box;
+    
+    padding:2em;
+    
+}
