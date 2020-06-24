@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+   font-size:16px;
+   font-family: 'Lato', sans-serif;
+   color:grey;
+}
+body{
+    
+    position:relative;
+    min-height:100vh;
+}
+
+header{
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   height: calc( 100vw * 54 / 200 );
+   max-height:40vh;
+   background:url(gfx/headerbg.jpg) no-repeat center center;
+   background-size: cover;
+}
+
+h1{
+    
+    color:goldenrod;
+    
+}
+
+nav{
+    
+    border-bottom:1px solid goldenrod;
+    
+}
+
+nav ul {
+    margin-top:1em;
+    list-style-type: none;
+    position:relative;
+    padding-left:1em;
+}
+
+nav ul li {
+    
+    display:inline-block;
+    margin-right:1em;
+    
+}
+
+nav ul li a{
+    display:block;
+    height:2em;
+    color:black;
+    font-weight:bold;
+    text-decoration:none;
+    
+}
+nav ul li a:hover{
+    color:goldenrod;
+}
+
+
+nav ul li:last-of-type{
+    position:absolute;
+    right:1em;
+}
+
+
+main {
+    width:80%;
+    margin:auto;
+    padding-bottom:2em;
+}
+
+
+
+main h2{
+    font-size:1.3rem;
+    margin:1em 0;
+}
+
+
+main form{
+    display:table;
+    margin:auto;
+    border-spacing: .2em;
+    caption-side: bottom;
+}
+
+main form>p{
+    display:table-row;
+}
+
+main form>p>*{
+    display:table-cell;
+}
+
+main form>p:last-of-type{
+    display:table-caption;
+    text-align:right;
+}
+
+
+footer{
+    font-size:.8rem;
+    border-top:1px solid goldenrod;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    box-sizing: border-box;
+    padding:.3em
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Carnet d'adresse</title>
+        <link rel="stylesheet" type="text/css" href="theme/main.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>Carnet</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="liste.php">Liste</a></li>
+                <li><a href="ajouter.php">Ajouter</a></li>
+                <li>
+                    <form action="liste.php" method="post">
+                        <input type="text" placeholder="Rechercher" name="rech">
+                        <button>Go</button>
+                    </form>
+                </li>             
+            </ul>
+        </nav>
+        <main>
+            <h2>Ajouter un Contact</h2>
+            <form action="inserer.php" method="post">
+            <p><label for="chpNom">Nom</label><input type="text" name="nom" id="chpNom"></p>
+            <p><label for="chpPrenom">Prénom</label><input type="text" name="prenom" id="chpPrenom"></p>
+            <p><label for="chpAdresse">Adresse</label><input type="text" name="adresse" id="chpAdresse"></p>
+            <p><label for="chCP">Code Postal</label><input type="text" name="cp" id="chCP"></p>
+            <p><label for="chpVille">Ville</label><input type="text" name="ville" id="chpVille"></p>
+            <p><label for="chpTel">Téléphone</label><input type="text" name="tel" id="chpTel"></p>
+            <p><label for="chpEmail">E-mail</label><input type="text" name="email" id="chpEmail"></p>
+            <p><button> Ajouter </button></p>
+            </form>
+        </main>
+        <footer>
+            &copy;Copyright Moi 2020
+        </footer>
+    </body>
+</html>
