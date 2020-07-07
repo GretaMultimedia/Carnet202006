@@ -49,24 +49,25 @@ try {
 
     $contact = $res->fetch_object();
 
+  //-----
     
-    entete( "Suppression de $contact->nom $contact->prenom");    
-    // afficher les infos 
+    $reqdel="delete from contacts where id=$id";
     
-    echo "<div class=\"confirm'\">
-            <p>Etes vous sur de vouloir qupprimer $contact->nom $contact->prenom ?</p>
-            <p>
-                <a href=\"delete.php?id=$id\">OUI</a>
-                <a href=\"liste.php\">NON</a>    
-            </p>
-            
-            ";
+    $db->query($reqdel);
+    if ($db->errno){
+        throw new Exception("Erreur lors de la supression de $contact->nom $contact->prenom ");
+        
+    }
     
+    
+    
+    
+    $_SESSION['message'] = "<p class=\"succes\">$contact->nom $contact->prenom a bien été supprimé</p>";
   
 } catch (Exception $e) {
 
-    echo "<p class=\"erreur\">" . $e->getMessage() . "</p>";
+    $_SESSION['message'] = "<p class=\"erreur\">".$e->getMessage()."</p>";
+    $_SESSION['posteddata'] = $_POST;
 }
 
-
-pied();
+header("location: liste.php");

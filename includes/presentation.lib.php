@@ -21,7 +21,7 @@ function entete($titre=null){
                 <li><a href="ajouter.php">Ajouter</a></li>
                 <li>
                     <form action="liste.php" method="post">
-                        <input type="text" placeholder="Rechercher" name="rech">
+                        <input type="text" placeholder="Rechercher" name="rechercher">
                         <button>Go</button>
                     </form>
                 </li>             

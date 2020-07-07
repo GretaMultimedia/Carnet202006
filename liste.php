@@ -3,6 +3,13 @@
 include "includes/config.inc.php";
 include "includes/presentation.lib.php";
 
+$rechercher= filter_input(INPUT_POST, "rechercher");
+if(is_null($rechercher)){
+    $rechercher="";
+}
+
+
+ 
 //connexion à la base
 entete("Contacts");
 try {
@@ -13,7 +20,12 @@ try {
         throw new Exception("Une erreur est survenue lors de la récupération de la liste de contacts");
     }
     
-    $requete="select id,nom,prenom from contacts order by nom,prenom";
+    $requete="select id,nom,prenom from contacts 
+                where 
+                    nom like '$rechercher%'
+                    or prenom like '$rechercher%'
+                    or cp like '$rechercher%'
+                order by nom,prenom";
     
     $res=$db->query($requete);
     
@@ -30,7 +42,7 @@ try {
             <td>$contact->nom  $contact->prenom</td>
             <td>
                 <a href=\"detail.php?id=$contact->id\">Détail</a> - 
-                <a href=\"editer.php?id=$contact->id\">Editer</a> - 
+                <a href=\"modifier.php?id=$contact->id\">Editer</a> - 
                 <a href=\"supprimer.php?id=$contact->id\">Supprimer</a>
             </td>
         </tr>";
